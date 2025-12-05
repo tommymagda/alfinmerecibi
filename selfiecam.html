@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📸 Selfie con Lau</title>
+    <link rel="stylesheet" href="selfiecam.css">
+</head>
+<body>
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Guardando tu foto...</p>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <div class="header">
+            <h1>📸 Selfie de Graduación</h1>
+            <p>¡Capturá tu momento especial conmigo!</p>
+        </div>
+
+        <div class="camera-container">
+            <video id="video" autoplay playsinline></video>
+            <canvas id="canvas"></canvas>
+            
+            <div class="initial-state" id="initialState">
+                <div class="icon">📷</div>
+                <p>Presioná "Activar Cámara"</p>
+            </div>
+
+            <div class="frame-overlay">
+                <div class="frame-border">
+                    <div class="frame-inner"></div>
+                </div>
+                
+                <div class="frame-title">
+                    <h2>¡ME RECIBÍ!</h2>
+                    <div class="year">2025</div>
+                </div>
+
+                <div class="emoji-decoration emoji-1">🎓</div>
+                <div class="emoji-decoration emoji-2">🤖</div>
+                <div class="emoji-decoration emoji-3">✨</div>
+                <div class="emoji-decoration emoji-4">🎉</div>
+
+                <div class="frame-bottom">
+                    <p style="font-size: medium;">🎯 Ciencias de Datos e IA<br>💻 Desarrollo Web y Aplicaciones Digitales</p>
+                    <div class="hashtag">#AlFinMeRecibi</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-camera" id="startBtn">
+                🔹 Activar Cámara
+            </button>
+            <button class="btn btn-switch" id="switchBtn" style="display:none;">
+                🔄 Cambiar Cámara
+            </button>
+            <button class="btn btn-stickers" id="stickersBtn" style="display:none;">
+                😊 Agregar Stickers
+            </button>
+            <button class="btn btn-gallery" id="galleryBtn">
+                🖼️ Ver Galería
+            </button>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-capture" id="captureBtn" disabled>
+                📸 Tomar Foto
+            </button>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            ✅ ¡Foto guardada exitosamente! Podés verla en la galería.
+        </div>
+
+        <div class="preview-container" id="previewContainer">
+            <p class="preview-title">✨ Tu foto con marco:</p>
+            <img id="preview" alt="Preview">
+            <div class="controls" style="margin-top: 20px;">
+                <button class="btn btn-download" id="downloadBtn">
+                    💾 Descargar Foto
+                </button>
+                <button class="btn btn-camera" id="newPhotoBtn">
+                    🔄 Tomar Otra
+                </button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📱 Cómo usar:</h3>
+            <ol>
+                <li><strong>Activá la cámara:</strong> Presioná el botón y permi el acceso a la cámara</li>
+                <li><strong>Agregá stickers:</strong> Tocá el botón de stickers y elegí los que quieras</li>
+                <li><strong>Movelos y ajustalos:</strong> Arrastrá, rotá y redimensioná los stickers</li>
+                <li><strong>Posicionate:</strong> Acomodá tu rostro en el centro del marco</li>
+                <li><strong>Capturá:</strong> Presioná el botón de tomar foto cuando estés list@</li>
+                <li><strong>Descargá:</strong> Guardá tu foto con el marco y los stickers incluidos</li>
+                <li><strong>Galería:</strong> Todas las fotos se guardan automáticamente en la galería</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Panel de stickers -->
+    <div class="stickers-panel" id="stickersPanel">
+        <div class="stickers-header">
+            <h3>🎨 Elegí tus stickers</h3>
+            <button class="close-stickers" id="closeStickers">✕</button>
+        </div>
+        <div class="stickers-grid" id="stickersGrid"></div>
+        <button class="clear-stickers-btn" id="clearStickers">🗑️ Borrar Todos los Stickers</button>
+    </div>
+
+    <script src="selfiecam.js"></script>
+</body>
+</html>
